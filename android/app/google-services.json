@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "195812032557",
+    "project_id": "learningapp-c8152",
+    "storage_bucket": "learningapp-c8152.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195812032557:android:f504eac433187c9eb438a4",
+        "android_client_info": {
+          "package_name": "com.dbestech.learning_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFEYIXUtItTPlDfAxtXxDid6XZ9AEEu-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
