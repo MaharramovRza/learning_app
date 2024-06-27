@@ -7,13 +7,13 @@ import 'package:learning_app/firebase_options.dart';
 import 'package:learning_app/pages/bloc_providers.dart';
 import 'common/values/colors.dart';
 import 'common/routes/routes.dart';
+import 'global.dart';
 
 
 
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Global.init();
   runApp(const MyApp());
 }
 

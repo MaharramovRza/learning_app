@@ -10,6 +10,7 @@ import 'package:learning_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:learning_app/pages/sign_in/sign_in.dart';
 import 'package:learning_app/pages/welcome/bloc/welcome_blocs.dart';
 
+import '../../global.dart';
 import '../../pages/application/bloc/app_blocs.dart';
 import '../../pages/welcome/welcome.dart';
 
@@ -60,7 +61,17 @@ class AppPages {
       if(settings.name != null){
         var result = routes().where((element) => element.route==settings.name);
         if(result.isNotEmpty){
-          print("valid route name ${settings.name}");
+
+
+          bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
+          if(result.first.route == AppRoutes.INITIAL&&deviceFirstOpen){
+            bool isLoggedin = Global.storageService.getIsLoggedIn();
+            if(isLoggedin){
+              return MaterialPageRoute(builder: (_)=>const ApplicationPage(),settings: settings);
+            }
+
+            return MaterialPageRoute(builder: (_)=>SignIn(),settings:settings);
+          }
           return MaterialPageRoute<void>(builder: (_)=>result.first.page, settings:settings);
         }
 
