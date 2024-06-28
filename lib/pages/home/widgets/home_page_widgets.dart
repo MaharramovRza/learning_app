@@ -159,6 +159,7 @@ Widget slidersView() {
       Container(
         padding: EdgeInsets.only(top: 8.h),
         child: DotsIndicator(
+            //
             mainAxisAlignment: MainAxisAlignment.center,
             reversed: false,
             dotsCount: 3,

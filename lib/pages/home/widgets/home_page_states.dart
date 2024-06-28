@@ -5,6 +5,7 @@ class HomePageStates{
 
   HomePageStates copyWith({int? index}){
     return HomePageStates(index:index??this.index);
+    //
   }
 
 }
