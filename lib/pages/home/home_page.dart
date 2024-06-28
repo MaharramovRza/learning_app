@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                 homePageText("RzaTech",color: AppColors.primaryText,top:5),
                 searchView(),
                 slidersView(context,state),
+                menuView(),
               ],
             ),
           );

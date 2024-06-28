@@ -197,3 +197,76 @@ Widget _slidersContainer({String path = "assets/icons/Art.png"}) {
     ),
   );
 }
+
+Widget menuView() {
+  return Column(
+    children: [
+      Container(
+          width: 325.w,
+          margin: EdgeInsets.only(top: 15.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              _reusableText("Choose your course"),
+              GestureDetector(child:_reusableText("See all",color:AppColors.primaryThirdElementText,fontsize: 10),),  // GestureDetector(child: Container(
+              //   margin: EdgeInsets.only(bottom: 0.h, top: 0.h),
+              //   child: Text(
+              //     "See All",
+              //     style: TextStyle(
+              //       color: AppColors.primaryThirdElementText,
+              //       fontWeight: FontWeight.normal,
+              //       fontSize: 10.sp,
+              //     ),
+              //   ),
+              // ),onTap: (){  },)
+            ],
+          )),
+      Container(
+          margin: EdgeInsets.only(top: 20.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+             _reusableMenuText("All"),
+              _reusableMenuText("Popular",textColor: AppColors.primaryThirdElementText,backGroundColor: Colors.white),
+              _reusableMenuText("Newest",textColor: AppColors.primaryThirdElementText,backGroundColor: Colors.white),
+
+            ],
+          ))
+    ],
+  );
+}
+
+Widget _reusableText(String text ,
+       {Color color =AppColors.primaryText,int fontsize = 16,FontWeight fontWeight = FontWeight.bold}){
+  return Container(
+    margin: EdgeInsets.only(bottom: 0.h, top: 0.h),
+    child: Text(
+      text,
+      style: TextStyle(
+        color: color,
+        fontWeight: fontWeight,
+        fontSize: fontsize.sp,
+      ),
+    ),
+  );
+}
+
+Widget _reusableMenuText(String menuText,{Color textColor = AppColors.primaryElementText,Color backGroundColor = AppColors.primaryElement}){
+  return Container(
+      margin: EdgeInsets.only(right: 30.w),
+      padding: EdgeInsets.only(
+          left: 15.w, right: 15.w, top: 5.h, bottom: 5.h),
+      decoration: BoxDecoration(
+          color: backGroundColor,
+          borderRadius: BorderRadius.all(Radius.circular(7.w)),
+          border: Border.all(color: backGroundColor)),
+      child:
+      _reusableText(menuText,
+          color:textColor,
+          fontWeight:FontWeight.normal,
+          fontsize: 11 )
+  );
+}
+
+
