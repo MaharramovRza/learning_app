@@ -29,24 +29,81 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: BlocBuilder<HomePageBlocs,HomePageStates>(
-        builder: (context,state){
-          return Container(
-            margin: EdgeInsets.symmetric(vertical: 0,horizontal: 25.w),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                homePageText("Hello,",color: AppColors.primaryThirdElementText,top:20),
-                homePageText("RzaTech",color: AppColors.primaryText,top:5),
-                searchView(),
-                slidersView(context,state),
-                menuView(),
-              ],
+      body: BlocBuilder<HomePageBlocs, HomePageStates>(builder: (context, state) {
+        return CustomScrollView(
+          slivers: [
+            // SliverPadding(
+            //     padding: EdgeInsets.symmetric(
+            //       vertical: 0,
+            //       horizontal: 25.w,
+            //     ),
+            //     sliver: SliverToBoxAdapter(
+            //         child: homePageText("Hello,",color: AppColors.primaryThirdElementText,top:20)
+            //     )
+            // ),
+            SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 25.w,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: homePageText("Rza-tech",color: AppColors.primaryText,top:5),
+                )
             ),
-          );
-        },
-      ),
+            SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 25.w,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: searchView(),
+                )
+            ),
+            SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 25.w,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: slidersView(context,state),
+                )
+            ),
+            SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 25.w,
+                ),
+                sliver: SliverToBoxAdapter(
+                    child: menuView()
+                )
+            ),
+            SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 18.h,
+                  horizontal: 25.w,
+                ),
+                sliver: SliverGrid(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 15,
+                      crossAxisSpacing: 15,
+                      childAspectRatio: 1.6,
+                    ),
+                    delegate: SliverChildBuilderDelegate(
+                      childCount:4,
+                          (BuildContext context, int index) {
+                        return GestureDetector(
+                          onTap: (){
+
+                          },
+                          child: courseGrid(),
+                        );
+                      },
+                    ))),
+
+          ],
+        );
+      }),
     );
   }
 }

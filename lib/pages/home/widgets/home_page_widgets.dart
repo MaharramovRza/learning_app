@@ -239,15 +239,12 @@ Widget menuView() {
 
 Widget _reusableText(String text ,
        {Color color =AppColors.primaryText,int fontsize = 16,FontWeight fontWeight = FontWeight.bold}){
-  return Container(
-    margin: EdgeInsets.only(bottom: 0.h, top: 0.h),
-    child: Text(
-      text,
-      style: TextStyle(
-        color: color,
-        fontWeight: fontWeight,
-        fontSize: fontsize.sp,
-      ),
+  return Text(
+    text,
+    style: TextStyle(
+      color: color,
+      fontWeight: fontWeight,
+      fontSize: fontsize.sp,
     ),
   );
 }
@@ -269,4 +266,46 @@ Widget _reusableMenuText(String menuText,{Color textColor = AppColors.primaryEle
   );
 }
 
-
+Widget courseGrid(){
+  return Container(
+    padding: EdgeInsets.all(12.w),
+    decoration: BoxDecoration(
+      borderRadius : BorderRadius.circular(15.w),
+      image:const DecorationImage(
+          fit:BoxFit.fill,
+          image:AssetImage("assets/icons/Image_2.png")
+      ),
+    ),
+    child:Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Best course for IT and Engineering",
+          maxLines:1,
+          overflow:TextOverflow.fade,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          style: TextStyle(
+              color:AppColors.primaryElementText,
+              fontWeight: FontWeight.bold,
+              fontSize: 11.sp
+          ),
+        ),
+        SizedBox(height: 5.h,),
+        Text(
+          "Flutter best course",
+          maxLines:1,
+          overflow:TextOverflow.fade,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          style: TextStyle(
+              color:AppColors.primaryFourthElementText,
+              fontWeight: FontWeight.normal,
+              fontSize: 8.sp
+          ),
+        ),
+      ],
+    ),
+  );
+}
