@@ -68,7 +68,7 @@ class _RegisterState extends State<Register> {
                   Container(
                     margin: EdgeInsets.only(left: 25.w),
                     child:
-                    reusableText("Enter your details below and free sign up"),
+                    reusableText("by creating an account you have to agrre with our term & conditions."),
                   ),
                   buildLogInAndRegButton("Sign Up", "login", () {
                     //Navigator.of(context).pushNamed("register");
