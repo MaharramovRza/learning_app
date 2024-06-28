@@ -12,6 +12,8 @@ import 'package:learning_app/pages/welcome/bloc/welcome_blocs.dart';
 
 import '../../global.dart';
 import '../../pages/application/bloc/app_blocs.dart';
+import '../../pages/home/home_page.dart';
+import '../../pages/home/widgets/home_page_blocs.dart';
 import '../../pages/welcome/welcome.dart';
 
 class AppPages {
@@ -40,11 +42,11 @@ class AppPages {
         page: const ApplicationPage(),
         bloc: BlocProvider(create: (_)=>AppBlocs(),)
       ),
-      // PageEntity(
-      //   route: AppRoutes.INITIAL,
-      //   page: const Welcome(),
-      //   bloc: BlocProvider(create: (_)=>WelcomeBloc(),)
-      // ),
+      PageEntity(
+          route: AppRoutes.HOME_PAGE,
+          page: const HomePage(),
+          bloc: BlocProvider(create: (_)=>HomePageBlocs(),)
+      ),
     ];
   }
 
