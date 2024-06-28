@@ -1,6 +1,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learning_app/pages/home/widgets/home_page_blocs.dart';
+import 'package:learning_app/pages/home/widgets/home_page_events.dart';
+import 'package:learning_app/pages/home/widgets/home_page_states.dart';
 
 import '../../../common/values/colors.dart';
 
@@ -141,7 +145,7 @@ Widget searchView() {
   );
 }
 
-Widget slidersView() {
+Widget slidersView(BuildContext context,HomePageStates state) {
   return Column(
     children: [
       Container(
@@ -149,6 +153,10 @@ Widget slidersView() {
         height: 160.h,
         margin: EdgeInsets.only(top:20.h),
         child: PageView(
+          onPageChanged:(value){
+            print(value.toString());
+            context.read<HomePageBlocs>().add(HomePageDots(value));
+          },
           children: [
             _slidersContainer(path:"assets/icons/Art.png"),
             _slidersContainer(path:"assets/icons/Image_1.png"),
@@ -159,11 +167,10 @@ Widget slidersView() {
       Container(
         padding: EdgeInsets.only(top: 8.h),
         child: DotsIndicator(
-            //
             mainAxisAlignment: MainAxisAlignment.center,
             reversed: false,
             dotsCount: 3,
-            position: 1,
+            position: state.index.toInt(),
             decorator: DotsDecorator(
               color: AppColors.primaryThirdElementText,
               activeColor: AppColors.primaryElement,

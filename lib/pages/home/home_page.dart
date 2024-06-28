@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learning_app/pages/home/widgets/home_page_blocs.dart';
+import 'package:learning_app/pages/home/widgets/home_page_states.dart';
 import 'package:learning_app/pages/home/widgets/home_page_widgets.dart';
 
 import '../../common/values/colors.dart';
@@ -26,18 +29,22 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: Container(
-        margin: EdgeInsets.symmetric(vertical: 0,horizontal: 25.w),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            homePageText("Hello,",color: AppColors.primaryThirdElementText,top:20),
-            homePageText("RzaTech",color: AppColors.primaryText,top:5),
-            searchView(),
-            slidersView(),
-          ],
-        ),
+      body: BlocBuilder<HomePageBlocs,HomePageStates>(
+        builder: (context,state){
+          return Container(
+            margin: EdgeInsets.symmetric(vertical: 0,horizontal: 25.w),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                homePageText("Hello,",color: AppColors.primaryThirdElementText,top:20),
+                homePageText("RzaTech",color: AppColors.primaryText,top:5),
+                searchView(),
+                slidersView(context,state),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
