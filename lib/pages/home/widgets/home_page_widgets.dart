@@ -2,11 +2,12 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:learning_app/pages/home/widgets/home_page_blocs.dart';
-import 'package:learning_app/pages/home/widgets/home_page_events.dart';
-import 'package:learning_app/pages/home/widgets/home_page_states.dart';
+import 'package:learning_app/pages/home/bloc/home_page_blocs.dart';
+import 'package:learning_app/pages/home/bloc/home_page_events.dart';
+import 'package:learning_app/pages/home/bloc/home_page_states.dart';
 
 import '../../../common/values/colors.dart';
+import '../../../common/widgets/base_text_widget.dart';
 
 AppBar buildAppBar() {
   return AppBar(
@@ -208,8 +209,8 @@ Widget menuView() {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              _reusableText("Choose your course"),
-              GestureDetector(child:_reusableText("See all",color:AppColors.primaryThirdElementText,fontsize: 10),),  // GestureDetector(child: Container(
+              reusableText("Choose your course"),
+              GestureDetector(child:reusableText("See all",color:AppColors.primaryThirdElementText,fontsize: 10),),  // GestureDetector(child: Container(
               //   margin: EdgeInsets.only(bottom: 0.h, top: 0.h),
               //   child: Text(
               //     "See All",
@@ -237,17 +238,7 @@ Widget menuView() {
   );
 }
 
-Widget _reusableText(String text ,
-       {Color color =AppColors.primaryText,int fontsize = 16,FontWeight fontWeight = FontWeight.bold}){
-  return Text(
-    text,
-    style: TextStyle(
-      color: color,
-      fontWeight: fontWeight,
-      fontSize: fontsize.sp,
-    ),
-  );
-}
+
 
 Widget _reusableMenuText(String menuText,{Color textColor = AppColors.primaryElementText,Color backGroundColor = AppColors.primaryElement}){
   return Container(
@@ -259,7 +250,7 @@ Widget _reusableMenuText(String menuText,{Color textColor = AppColors.primaryEle
           borderRadius: BorderRadius.all(Radius.circular(7.w)),
           border: Border.all(color: backGroundColor)),
       child:
-      _reusableText(menuText,
+      reusableText(menuText,
           color:textColor,
           fontWeight:FontWeight.normal,
           fontsize: 11 )

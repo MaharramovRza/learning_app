@@ -15,7 +15,7 @@ import 'package:learning_app/pages/welcome/bloc/welcome_blocs.dart';
 import '../../global.dart';
 import '../../pages/application/bloc/app_blocs.dart';
 import '../../pages/home/home_page.dart';
-import '../../pages/home/widgets/home_page_blocs.dart';
+import '../../pages/home/bloc/home_page_blocs.dart';
 import '../../pages/welcome/welcome.dart';
 
 class AppPages {

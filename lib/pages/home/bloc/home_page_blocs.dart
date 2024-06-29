@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'home_page_events.dart';
-import 'home_page_states.dart';
+import '../bloc/home_page_events.dart';
+import '../bloc/home_page_states.dart';
 
 class HomePageBlocs extends Bloc<HomePageEvents,HomePageStates>{
   HomePageBlocs():super(HomePageStates()){
