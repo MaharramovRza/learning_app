@@ -32,22 +32,22 @@ class _HomePageState extends State<HomePage> {
       body: BlocBuilder<HomePageBlocs, HomePageStates>(builder: (context, state) {
         return CustomScrollView(
           slivers: [
-            // SliverPadding(
-            //     padding: EdgeInsets.symmetric(
-            //       vertical: 0,
-            //       horizontal: 25.w,
-            //     ),
-            //     sliver: SliverToBoxAdapter(
-            //         child: homePageText("Hello,",color: AppColors.primaryThirdElementText,top:20)
-            //     )
-            // ),
             SliverPadding(
                 padding: EdgeInsets.symmetric(
                   vertical: 0,
                   horizontal: 25.w,
                 ),
                 sliver: SliverToBoxAdapter(
-                  child: homePageText("Rza-tech",color: AppColors.primaryText,top:5),
+                    child: homePageText("Hello",color: AppColors.primaryThirdElementText,top:20)
+                )
+            ),
+            SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 25.w,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: homePageText("RzaTech",color: AppColors.primaryText,top:5),
                 )
             ),
             SliverPadding(
