@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learning_app/pages/profile/widgets/profile_widgets.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -14,6 +15,17 @@ class _ProfileState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppbar(),
+      body: SingleChildScrollView(
+        child:SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              profileIconAndButton(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
