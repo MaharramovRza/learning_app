@@ -14,6 +14,7 @@ class _ProfileState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: buildAppbar(),
       body: SingleChildScrollView(
         child:SizedBox(
@@ -22,6 +23,11 @@ class _ProfileState extends State<ProfilePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               profileIconAndButton(),
+              SizedBox(height: 30.h,),
+              Padding(
+                padding:EdgeInsets.only(left: 25.w),
+                child: buildListView(),
+              ),
             ],
           ),
         ),
