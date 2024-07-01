@@ -59,7 +59,7 @@ Widget reusableText(String text){
       style: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,
-        fontSize: 20.sp,
+        fontSize: 16.sp,
       ),
     ),
   );
