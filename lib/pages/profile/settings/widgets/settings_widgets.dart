@@ -7,12 +7,9 @@ import '../../../../common/values/colors.dart';
 AppBar buildAppBar(){
   return AppBar(
     title:Container(
-      child:Container(
-        child:reusableText(text),
-        )
+      child:reusableText("Settings"),
       )
-    )
-  );
+    );
 }
 
 Widget settingsButton(BuildContext context,void Function()? func){

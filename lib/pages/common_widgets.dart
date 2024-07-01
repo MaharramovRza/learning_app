@@ -57,9 +57,9 @@ Widget reusableText(String text){
       text,
       textAlign: TextAlign.center,
       style: TextStyle(
-        color: Colors.grey.withOpacity(0.5),
-        fontWeight: FontWeight.normal,
-        fontSize: 14.sp,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+        fontSize: 20.sp,
       ),
     ),
   );
